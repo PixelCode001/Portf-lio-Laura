@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #1c1b29, #100e1d);
+    background: linear-gradient(to bottom, #3d0f4c, #1c0a2d);
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -79,6 +79,21 @@ nav a:hover {
     background-color: #e63968;
 }
 
+/* Seta animada */
+.arrow {
+    margin-top: 20px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* Sobre Nós */
 .about, .services, .portfolio, .contact {
     padding: 100px 50px;
@@ -132,4 +147,16 @@ nav a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+}
+
+/* Efeito Neon */
+.neon {
+    color: #39ff14; /* verde neon */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
+}
+
+/* Adicionando classes de estilo neon */
+.about h2.neon, .services h2.neon, .portfolio h2.neon, .contact h2.neon {
+    color: #ff4081;
+    text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 20px #ff4081;
 }
