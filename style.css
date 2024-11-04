@@ -1,0 +1,135 @@
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #1c1b29, #100e1d);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 50px;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ff4081;
+}
+
+/* Seção principal */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #a6a6a6;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #e63968;
+}
+
+/* Sobre Nós */
+.about, .services, .portfolio, .contact {
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.about h2, .services h2, .portfolio h2, .contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Serviços */
+.service-item {
+    background: #25233b;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+/* Formulário de contato */
+.contact form input, .contact form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #ff4081;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #e63968;
+}
+
+/* Letra L no fundo */
+.hero::before {
+    content: "L";
+    font-size: 25rem;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
