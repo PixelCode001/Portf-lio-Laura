@@ -259,3 +259,22 @@ window.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+    /* Letra L no fundo */
+.hero::before {
+    content: "L";
+    font-size: 25rem;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(30deg) perspective(1000px) rotateY(20deg); /* Efeito 3D */
+    z-index: -1;
+    /* Remover a animação de rotação */
+}
+
+/* Você pode adicionar um estilo adicional para aumentar o efeito 3D, se necessário */
+.hero::before {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
