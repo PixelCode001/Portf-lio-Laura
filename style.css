@@ -1,9 +1,9 @@
-/* Estilo global */
+/* Estilo global */ 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 /* Cabeçalho */
@@ -24,12 +25,22 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
+    transition: background 0.3s;
+}
+
+header.scrolled {
+    background: rgba(61, 15, 76, 0.8);
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(3deg);
 }
 
 nav a {
@@ -38,10 +49,12 @@ nav a {
     color: #ffffff;
     font-weight: 300;
     font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
     color: #ff4081;
+    transform: translateY(-3px) scale(1.1);
 }
 
 /* Seção principal */
@@ -52,11 +65,30 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     position: relative;
+    animation: fadeIn 1s;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero-content h1 {
     font-size: 3rem;
     color: #ffffff;
+    animation: slideIn 1s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .hero-content p {
@@ -73,10 +105,12 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .button:hover {
     background-color: #e63968;
+    transform: translateY(-3px) scale(1.05);
 }
 
 /* Seta animada */
@@ -98,12 +132,30 @@ nav a:hover {
 .about, .services, .portfolio, .contact {
     padding: 100px 50px;
     text-align: center;
+    animation: fadeIn 1s;
+    position: relative;
+    overflow: hidden;
 }
 
 .about h2, .services h2, .portfolio h2, .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     color: #ffffff;
+    position: relative;
+}
+
+.about h2::after, .services h2::after, .portfolio h2::after, .contact h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: #ff4081;
+    margin: 10px auto;
+    transition: width 0.4s ease-in-out;
+}
+
+.about h2:hover::after, .services h2:hover::after, .portfolio h2:hover::after, .contact h2:hover::after {
+    width: 100%;
 }
 
 /* Serviços */
@@ -113,6 +165,31 @@ nav a:hover {
     margin: 10px;
     border-radius: 5px;
     color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 64, 129, 0.5);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 64, 129, 0.2);
+    transition: opacity 0.3s;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+.service-item:hover::before {
+    opacity: 1;
 }
 
 /* Formulário de contato */
@@ -122,6 +199,11 @@ nav a:hover {
     padding: 10px;
     border-radius: 5px;
     border: none;
+    transition: box-shadow 0.3s;
+}
+
+.contact form input:focus, .contact form textarea:focus {
+    box-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081;
 }
 
 .contact button {
@@ -131,10 +213,12 @@ nav a:hover {
     color: #ffffff;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact button:hover {
     background-color: #e63968;
+    transform: scale(1.1);
 }
 
 /* Letra L no fundo */
@@ -145,18 +229,33 @@ nav a:hover {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(10deg);
     z-index: -1;
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Efeito Neon */
 .neon {
-    color: #39ff14; /* verde neon */
+    color: #39ff14;
     text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14;
 }
 
-/* Adicionando classes de estilo neon */
 .about h2.neon, .services h2.neon, .portfolio h2.neon, .contact h2.neon {
     color: #ff4081;
     text-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 20px #ff4081;
 }
+
+/* Scroll Effect */
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
