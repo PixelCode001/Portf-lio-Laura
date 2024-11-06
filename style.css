@@ -108,6 +108,39 @@ nav a:hover {
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
 }
+.scroll-down {
+    position: absolute;
+    bottom: 20px;  /* Posicionando a seta perto da parte inferior da seção hero */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    animation: bounce 1.5s infinite; /* Animação de bounce (pular) para chamar atenção */
+}
+
+.scroll-down i {
+    font-size: 40px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.scroll-down:hover i {
+    transform: translateY(5px);
+}
+
+/* Animação de pulo para a seta */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .button:hover {
     background-color: #e63968;
@@ -569,28 +602,97 @@ nav a:hover {
         font-size: 1rem;
     }
 }
-/* Estilo para a seção de metodologias */
+/* Seção de Experiência Profissional */
+/* Seção de Experiência Profissional */
+.experience {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #6A1B9A 0%, #FF4081 100%); /* Degradê suave do roxo ao rosa */
+    color: #fff;
+    text-align: center;
+}
+
+.experience h2 {
+    font-size: 2.6rem;
+    color: #fff;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.experience h2::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background: #fff;
+    margin: 10px auto;
+    transition: width 0.4s ease-in-out;
+}
+
+.experience h2:hover::after {
+    width: 100%;
+}
+
+.experience-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    justify-items: center; /* Centraliza os itens */
+}
+
+.experience-item {
+    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #E1BEE7; /* Cor lilás clara */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.experience-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.experience-item h3 {
+    font-size: 1.8rem;
+    color: #6A1B9A; /* Cor roxa */
+    margin-bottom: 15px;
+}
+
+.experience-item p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.experience-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Seção de Metodologias */
 .methodologies {
     padding: 60px 20px;
-    background: #ffffff; /* Fundo branco para uma aparência clean */
-    color: #333; /* Texto escuro para boa legibilidade */
+    background: linear-gradient(135deg, #6A1B9A 0%, #FF4081 100%); /* Degradê suave do roxo ao rosa */
+    color: #fff;
     text-align: center;
 }
 
 .methodologies h2 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+    color: #fff;
     margin-bottom: 30px;
-    color: #2B0E44; /* Cor de título mais forte */
     position: relative;
 }
 
-/* Efeito de linha embaixo no título */
 .methodologies h2::after {
     content: '';
     display: block;
     width: 50%;
-    height: 2px;
-    background: #ff4081; /* Cor vibrante para o destaque */
+    height: 3px;
+    background: #fff;
     margin: 10px auto;
     transition: width 0.4s ease-in-out;
 }
@@ -599,56 +701,152 @@ nav a:hover {
     width: 100%;
 }
 
-/* Estilo para os itens de metodologia */
+.methodology-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center; /* Centraliza os itens */
+}
+
 .methodology-item {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombras suaves para dar destaque */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 30px; /* Espaçamento entre os itens */
-    border: 1px solid #ddd; /* Borda suave */
-    max-width: 800px; /* Limitar a largura máxima */
-    margin-left: auto;
-    margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #E1BEE7; /* Cor lilás clara */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Efeito de hover nos itens */
 .methodology-item:hover {
-    transform: scale(1.05); /* Aumento do item ao passar o mouse */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombras mais fortes ao hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Títulos dentro dos itens de metodologia */
 .methodology-item h3 {
     font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #2B0E44; /* Cor mais intensa para os subtítulos */
+    color: #6A1B9A; /* Cor roxa */
+    margin-bottom: 15px;
 }
 
-/* Descrição dos itens de metodologia */
 .methodology-item p {
     font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555; /* Cor de texto suave */
+    color: #333;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .methodologies {
-        padding: 40px 15px;
+    .experience-items, .methodology-items {
+        grid-template-columns: 1fr;
     }
 
-    .methodology-item {
+    .experience-item, .methodology-item {
         padding: 20px;
-        margin-bottom: 20px; /* Menor espaçamento entre os itens */
     }
 
-    .methodology-item h3 {
+    .experience-item h3, .methodology-item h3 {
         font-size: 1.6rem;
     }
 
-    .methodology-item p {
+    .experience-item p, .methodology-item p {
         font-size: 1rem;
+    }
+}
+/* Estilo da Barra de Navegação */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #6A1B9A; /* Cor roxa */
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .logo:hover {
+    color: #FF4081; /* Efeito hover rosa */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links a {
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-links a:hover {
+    color: #FF4081; /* Efeito de hover rosa */
+    transform: translateY(-3px); /* Efeito sutil de movimento */
+}
+
+/* Efeito de fundo da navegação ao rolar a página */
+body.scrolled .navbar {
+    background-color: #9C27B0; /* Um tom de roxo mais escuro */
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #6A1B9A;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links a {
+        font-size: 1.3rem;
+        text-align: right;
+    }
+
+    .navbar .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .navbar .hamburger.active {
+        color: #FF4081; /* Mudança de cor no menu hambúrguer ao ativar */
     }
 }
