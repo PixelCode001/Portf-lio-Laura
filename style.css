@@ -1,19 +1,19 @@
-/* Estilo global */
+/* Estilos Globais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: linear-gradient(to bottom, #2B0E44, #000000); /* Fundo degradê */
-    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #2B0E44, #000000);
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    min-height: 100vh;
 }
 
 /* Cabeçalho */
@@ -36,7 +36,7 @@ header.scrolled {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fff;
     transition: transform 0.3s;
 }
 
@@ -47,7 +47,7 @@ header.scrolled {
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #ffffff;
+    color: #fff;
     font-weight: 300;
     font-size: 18px;
     transition: color 0.3s, transform 0.3s;
@@ -58,7 +58,7 @@ nav a:hover {
     transform: translateY(-3px) scale(1.1);
 }
 
-/* Seção principal */
+/* Seção Hero */
 .hero {
     height: 100vh;
     display: flex;
@@ -77,7 +77,7 @@ nav a:hover {
 
 .hero-content h1 {
     font-size: 3rem;
-    color: #ffffff;
+    color: #fff;
     animation: slideIn 1s forwards;
 }
 
@@ -102,20 +102,21 @@ nav a:hover {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ff4081;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
 }
+
 .scroll-down {
     position: absolute;
-    bottom: 20px;  /* Posicionando a seta perto da parte inferior da seção hero */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
     cursor: pointer;
-    animation: bounce 1.5s infinite; /* Animação de bounce (pular) para chamar atenção */
+    animation: bounce 1.5s infinite;
 }
 
 .scroll-down i {
@@ -128,27 +129,19 @@ nav a:hover {
     transform: translateY(5px);
 }
 
-/* Animação de pulo para a seta */
 @keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
-
 
 .button:hover {
     background-color: #e63968;
     transform: translateY(-3px) scale(1.05);
 }
 
-/* Seção Sobre Nós */
-.about, .services, .portfolio, .contact {
+/* Seções (Sobre, Serviços, Portfólio, Contato) */
+section {
     padding: 100px 50px;
     text-align: center;
     animation: fadeIn 1s;
@@ -156,15 +149,13 @@ nav a:hover {
     overflow: hidden;
 }
 
-.about h2, .services h2, .portfolio h2, .contact h2 {
+section h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #ffffff;
-    position: relative;
+    color: #fff;
 }
 
-/* Efeito de linha embaixo */
-.about h2::after, .services h2::after, .portfolio h2::after, .contact h2::after {
+section h2::after {
     content: '';
     display: block;
     width: 50%;
@@ -174,7 +165,7 @@ nav a:hover {
     transition: width 0.4s ease-in-out;
 }
 
-.about h2:hover::after, .services h2:hover::after, .portfolio h2:hover::after, .contact h2:hover::after {
+section h2:hover::after {
     width: 100%;
 }
 
@@ -184,7 +175,7 @@ nav a:hover {
     padding: 20px;
     margin: 10px;
     border-radius: 5px;
-    color: #ffffff;
+    color: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
     overflow: hidden;
@@ -212,7 +203,7 @@ nav a:hover {
     opacity: 1;
 }
 
-/* Formulário de contato */
+/* Formulário de Contato */
 .contact form input, .contact form textarea {
     width: 100%;
     margin: 10px 0;
@@ -230,7 +221,7 @@ nav a:hover {
     padding: 10px 20px;
     background-color: #ff4081;
     border: none;
-    color: #ffffff;
+    color: #fff;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -241,27 +232,7 @@ nav a:hover {
     transform: scale(1.1);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-    }
-
-    .service-item {
-        margin: 15px 0;
-    }
-}
-/* Estilos para os ícones de redes sociais */
+/* Ícones de Redes Sociais */
 .social-media-icons {
     position: fixed;
     top: 50%;
@@ -289,18 +260,30 @@ nav a:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.social-icon i {
-    pointer-events: none;  /* Garantir que o clique seja no link e não no ícone */
-}
-
-/* Seção de Redes sociais */
-.social-media-icons a {
-    display: block;
-    margin: 10px;
-}
-
-/* Responsividade - os ícones devem aparecer no topo para telas pequenas */
+/* Responsividade */
 @media (max-width: 768px) {
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Navegação */
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    /* Serviços */
+    .service-item {
+        margin: 15px 0;
+    }
+
+    /* Redes Sociais */
     .social-media-icons {
         top: 20px;
         right: 10px;
@@ -308,473 +291,58 @@ nav a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .social-icon {
         margin: 0 5px;
         padding: 10px;
     }
-}
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-}
-
-/* Estilos do cabeçalho */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-header .logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos da seção principal (Hero) */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #ff4081, #ff80ab);
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.hero-content .button {
-    background-color: #fff;
-    color: #ff4081;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: 1.1em;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.hero-content .button:hover {
-    background-color: #ff4081;
-    color: white;
-}
-
-/* Indicativo de rolagem */
-.scroll-indicator {
-    position: absolute;
-    bottom: 30px;
-    text-align: center;
-    font-size: 1.2em;
-    color: white;
-}
-
-.scroll-indicator .arrow-down {
-    font-size: 2em;
-    margin-top: 10px;
-    animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Estilos das redes sociais abaixo do botão "Sobre mim" */
-.social-media {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.social-icon {
-    background-color: #ff4081;
-    color: white;
-    font-size: 30px;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 50%;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-decoration: none;
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos para a seção "Sobre mim" */
-.about {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-/* Estilos para as habilidades */
-.skills {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.skills h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.skill-item {
-    font-size: 1.3em;
-    margin: 20px 0;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .scroll-indicator span {
-        font-size: 1em;
-    }
-
-    .scroll-indicator .arrow-down {
-        font-size: 1.5em;
-    }
-
-    .social-icon {
-        font-size: 24px;
-        padding: 10px;
-        margin: 5px;
-    }
-
-    .social-media {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-}
-/* Estilo para a Seção de Portfólio */
-#portfolio {
-    padding: 60px 20px;
-    text-align: center;
-    background: #f5f5f5; /* Fundo claro para um design clean */
-    color: #333; /* Texto em cinza escuro para contraste suave */
-}
-
-#portfolio h2 {
-    font-size: 2.8rem;
-    margin-bottom: 30px;
-    color: #2B0E44; /* Cor de título mais forte */
-    position: relative;
-}
-
-/* Efeito de linha embaixo no título */
-#portfolio h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 2px;
-    background: #ff4081;
-    margin: 10px auto;
-    transition: width 0.4s ease-in-out;
-}
-
-#portfolio h2:hover::after {
-    width: 100%;
-}
-
-/* Estilo para a Seção de Experiência */
-.experience {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
-    gap: 30px;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px; /* Largura máxima para manter o design controlado */
-}
-
-/* Cartão de Experiência */
-.experience-item {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombras suaves para destaque */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    border: 1px solid #ddd; /* Borda suave para o cartão */
-}
-
-.experience-item:hover {
-    transform: scale(1.05); /* Efeito de zoom */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombras mais fortes ao passar o mouse */
-}
-
-/* Título da experiência */
-.experience-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: #2B0E44; /* Cor mais intensa para o título */
-}
-
-/* Texto da experiência */
-.experience-item p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555; /* Cor de texto mais suave */
-}
-
-.experience-details ul {
-    list-style: disc;
-    text-align: left;
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.experience-details ul li {
-    margin: 8px 0;
-}
-
-/* Ícone da experiência */
-.experience-icon {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    background: #ff4081;
-    color: #fff;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
+    /* Experiência */
     .experience-item {
         padding: 20px;
     }
 
-    .experience-item h3 {
-        font-size: 1.6rem;
-    }
-
-    .experience-item p, .experience-details ul li {
-        font-size: 1rem;
-    }
-}
-/* Seção de Experiência Profissional */
-/* Seção de Experiência Profissional */
-.experience {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #6A1B9A 0%, #FF4081 100%); /* Degradê suave do roxo ao rosa */
-    color: #fff;
-    text-align: center;
-}
-
-.experience h2 {
-    font-size: 2.6rem;
-    color: #fff;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.experience h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 3px;
-    background: #fff;
-    margin: 10px auto;
-    transition: width 0.4s ease-in-out;
-}
-
-.experience h2:hover::after {
-    width: 100%;
-}
-
-.experience-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-    justify-items: center; /* Centraliza os itens */
-}
-
-.experience-item {
-    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 2px solid #E1BEE7; /* Cor lilás clara */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.experience-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.experience-item h3 {
-    font-size: 1.8rem;
-    color: #6A1B9A; /* Cor roxa */
-    margin-bottom: 15px;
-}
-
-.experience-item p {
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.experience-item ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Seção de Metodologias */
-.methodologies {
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #6A1B9A 0%, #FF4081 100%); /* Degradê suave do roxo ao rosa */
-    color: #fff;
-    text-align: center;
-}
-
-.methodologies h2 {
-    font-size: 2.6rem;
-    color: #fff;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.methodologies h2::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 3px;
-    background: #fff;
-    margin: 10px auto;
-    transition: width 0.4s ease-in-out;
-}
-
-.methodologies h2:hover::after {
-    width: 100%;
-}
-
-.methodology-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    justify-items: center; /* Centraliza os itens */
-}
-
-.methodology-item {
-    background: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 2px solid #E1BEE7; /* Cor lilás clara */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.methodology-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.methodology-item h3 {
-    font-size: 1.8rem;
-    color: #6A1B9A; /* Cor roxa */
-    margin-bottom: 15px;
-}
-
-.methodology-item p {
-    font-size: 1.1rem;
-    color: #333;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .experience-items, .methodology-items {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-item, .methodology-item {
+    /* Metodologias */
+    .methodology-item {
         padding: 20px;
     }
-
-    .experience-item h3, .methodology-item h3 {
-        font-size: 1.6rem;
-    }
-
-    .experience-item p, .methodology-item p {
-        font-size: 1rem;
-    }
 }
-/* Estilo da Barra de Navegação */
+/* Estilos para a barra de navegação */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Ajustado para a altura padrão da barra */
     z-index: 1000;
-}
-
-.navbar {
-    background-color: #6A1B9A; /* Cor roxa */
-    padding: 15px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Barra de navegação */
+.navbar {
+    background-color: rgba(106, 27, 154, 0.4); /* Cor roxa com transparência */
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo da navbar */
+    width: 100%;
+}
+
+/* Quando o usuário rola a página, a barra escurece um pouco */
+body.scrolled .navbar {
+    background-color: rgba(106, 27, 154, 0.9); /* Tom mais escuro */
+}
+
+/* Contêiner centralizado da barra de navegação */
 .navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    height: 100%;
 }
 
+/* Logo */
 .navbar .logo {
     font-size: 2rem;
     color: #fff;
@@ -785,18 +353,21 @@ header {
 }
 
 .navbar .logo:hover {
-    color: #FF4081; /* Efeito hover rosa */
+    color: #FF4081;
 }
 
+/* Menu de navegação */
 .navbar-links {
     display: flex;
     gap: 30px;
 }
 
+/* Itens do menu */
 .navbar-links li {
     list-style: none;
 }
 
+/* Links de navegação */
 .navbar-links a {
     color: #fff;
     font-size: 1.1rem;
@@ -807,15 +378,23 @@ header {
 }
 
 .navbar-links a:hover {
-    color: #FF4081; /* Efeito de hover rosa */
-    transform: translateY(-3px); /* Efeito sutil de movimento */
+    color: #FF4081;
+    transform: translateY(-3px);
 }
 
-/* Efeito de fundo da navegação ao rolar a página */
-body.scrolled .navbar {
-    background-color: #9C27B0; /* Um tom de roxo mais escuro */
+/* Menu hamburguer */
+.navbar .hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #FF4081; /* Roxo neon */
+    cursor: pointer;
 }
 
+.navbar .hamburger.active {
+    color: #FF4081;
+}
+
+/* Barra de navegação responsiva */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -824,10 +403,10 @@ body.scrolled .navbar {
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: #6A1B9A;
+        background-color: rgba(106, 27, 154, 0.95);
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .navbar-links.active {
@@ -841,12 +420,5 @@ body.scrolled .navbar {
 
     .navbar .hamburger {
         display: block;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-    }
-
-    .navbar .hamburger.active {
-        color: #FF4081; /* Mudança de cor no menu hambúrguer ao ativar */
     }
 }
