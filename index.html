@@ -10,16 +10,23 @@
     </head>
     
     <body>
-        <!-- Cabeçalho -->
-        <header>
-            <div class="logo">Prazer, me chamo Laura</div>
-            <nav>
-                <a href="#services">Serviços</a>
-                <a href="#portfolio">Portfólio</a>
-                <a href="#contact">Contato</a>
-            </nav>
-        </header>
-    
+<!-- Barra de Navegação -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">MeuPortfólio</a>
+            <ul class="navbar-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#experience">Experiência</a></li>
+                <li><a href="#methodologies">Metodologias</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
         <!-- Seção principal -->
         <section class="hero">
             <div class="hero-content">
@@ -31,10 +38,10 @@
     
         <!-- Redes sociais fixas à direita -->
         <div class="social-media-icons">
-            <a href= https://wa.me/+5531997582330 target="_blank" class="social-icon">
+            <a href="https://wa.me/+5531997582330" target="_blank" class="social-icon">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href=https://instagram.com/laura_gomexz target="_blank" class="social-icon">
+            <a href="https://instagram.com/laura_gomexz" target="_blank" class="social-icon">
                 <i class="fab fa-instagram"></i>
             </a>
             <!-- Adicionar outros ícones conforme necessário -->
@@ -45,70 +52,71 @@
             <h2>Sobre mim</h2>
             <p>Olá! Sou Laura, futura nutricionista...</p>
         </section>
-    
-    <!-- Seção "Habilidades" -->
-    <section id="skills" class="skills">
-        <h2>Habilidades</h2>
-        <div class="skill-item">🖥️ Gestão de Perfis Online</div>
-        <div class="skill-item">🍳 Criação e Desenvolvimento de Receitas Culinárias</div>
-        <div class="skill-item">🎥 Edição Profissional de Vídeos</div>
-        <div class="skill-item">🎨 Design Gráfico e Branding</div>
-        <div class="skill-item">🧑‍💻 Aprendizado Rápido e Adaptação</div>
+        <div class="scroll-down">
+            <a href="#next-section" class="scroll-link">
+                <i class="fa fa-arrow-down"></i> <!-- Usando um ícone da Font Awesome -->
+            </a>
+        </div>
+        <section id="next-section">
+            <!-- Conteúdo da próxima seção -->
+        </section>
+        
+        <!-- Seção "Habilidades" -->
+        <section id="skills" class="skills">
+            <h2>Habilidades</h2>
+            <div class="skill-item">🖥️ Gestão de Perfis Online</div>
+            <div class="skill-item">🍳 Criação e Desenvolvimento de Receitas Culinárias</div>
+            <div class="skill-item">🎥 Edição Profissional de Vídeos</div>
+            <div class="skill-item">🎨 Design Gráfico e Branding</div>
+            <div class="skill-item">🧑‍💻 Aprendizado Rápido e Adaptação</div>
+        </section>
 
-            
-        <section id="experiencia e Metodologias" class="portfolio">
-            <h2>Experiência Profisional</h2>
-                
-                <!-- Cartão de Experiência -->
-                <div class="experience-item">
-                    <div class="experience-icon">
-                        <i class="fas fa-cash-register"></i> <!-- Ícone representando caixa -->
-                    </div>
-                    <h3>Serviço ao Cliente e Processamento de Pagamentos</h3>
-                    <p><strong>Período:</strong> Outubro de 2021 - Início 2023</p>
-                    <div class="experience-details">
-                        <p><strong>Principais Responsabilidades:</strong></p>
-                        <ul>
-                            <li>Operação de Sistemas de Ponto de Venda (PDV): Registro de produtos e emissão de comprovantes.</li>
-                            <li>Atenção aos Detalhes: Garantir que todos os valores sejam corretos e as promoções sejam aplicadas corretamente.</li>
-                            <li>Gestão de Atendimento Rápido e Eficiente: Garantir um fluxo contínuo de atendimento, evitando filas e proporcionando uma experiência positiva.</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Adicionar mais itens de experiência aqui -->
-            </section>
-        </section>
-        <section id="methodologies" class="methodologies">
-            <h2>Metodologias e Abordagens</h2>
-            <p>Minha atuação como nutricionista é guiada por uma combinação de metodologias científicas e práticas criativas, sempre adaptadas às necessidades individuais dos meus clientes. Abaixo, compartilho algumas das abordagens e metodologias que utilizo em minha prática profissional, associando-as às minhas principais habilidades.</p>
-            
-            <div class="methodology-item">
-                <h3>Nutrição Comportamental</h3>
-                <p><strong>Habilidade Relacionada:</strong> Psicologia e Gestão de Atendimentos</p>
-                <p>A nutrição comportamental é uma metodologia que integra aspectos psicológicos ao processo de alimentação. Ajudar os clientes a desenvolverem uma relação mais saudável com a comida é um dos pilares dessa abordagem. Com base na escuta ativa e no acompanhamento contínuo, busco entender as preferências alimentares, crenças e comportamentos de cada indivíduo, criando planos alimentares que respeitam o seu momento.</p>
-            </div>
+        <!-- Seção de Experiência Profissional -->
+ <!-- Seção de Experiência Profissional -->
+<section id="experience" class="experience">
+    <h2>Experiência Profissional</h2>
+    <div class="experience-items">
+        <div class="experience-item">
+            <h3>Serviço ao Cliente e Processamento de Pagamentos</h3>
+            <p><strong>Período:</strong> Outubro de 2021 - Início 2023</p>
+            <ul>
+                <li>Operação de Sistemas de Ponto de Venda (PDV), registrando produtos e processando pagamentos.</li>
+                <li>Garantia de precisão em cálculos e na aplicação de promoções e descontos.</li>
+                <li>Atendimento rápido e eficiente, proporcionando uma experiência positiva ao cliente.</li>
+                <li>Gestão de equipe para otimizar o fluxo de atendimento e reduzir filas.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Metodologias -->
+<section id="methodologies" class="methodologies">
+    <h2>Metodologias e Abordagens</h2>
+    <p>Minhas metodologias são fundamentadas em princípios científicos e práticos, aplicados de forma personalizada para cada cliente. Abaixo, apresento as abordagens que utilizo em minha prática como nutricionista.</p>
+    <div class="methodology-items">
+        <div class="methodology-item">
+            <h3>Nutrição Comportamental</h3>
+            <p>A nutrição comportamental integra aspectos psicológicos e emocionais ao processo de alimentação, promovendo uma relação saudável e sustentável com a comida.</p>
+        </div>
+
+        <div class="methodology-item">
+            <h3>Planejamento Alimentar Personalizado</h3>
+            <p>Planos alimentares feitos sob medida, levando em consideração os hábitos, preferências e necessidades nutricionais de cada cliente.</p>
+        </div>
+
+        <div class="methodology-item">
+            <h3>Educação Nutricional</h3>
+            <p>Proporcionar o conhecimento necessário para que meus clientes possam tomar decisões alimentares conscientes e promover um estilo de vida saudável.</p>
+        </div>
+
+        <div class="methodology-item">
+            <h3>Monitoramento e Acompanhamento</h3>
+            <p>O acompanhamento contínuo é essencial para garantir que os objetivos sejam atingidos e os planos alimentares sejam ajustados conforme necessário.</p>
+        </div>
+    </div>
+</section>
+
         
-            <div class="methodology-item">
-                <h3>Planejamento Alimentar Personalizado</h3>
-                <p><strong>Habilidade Relacionada:</strong> Desenvolvimento de Planos Nutricionais e Técnicas de Culinária</p>
-                <p>Cada pessoa possui necessidades alimentares únicas. O planejamento alimentar personalizado é uma abordagem que busca montar cardápios específicos, baseados nas preferências alimentares, estilo de vida e objetivos de saúde. Combinando conhecimentos técnicos de nutrição e criatividade na cozinha, crio planos sustentáveis e saborosos, promovendo uma alimentação equilibrada e prazerosa.</p>
-            </div>
-        
-            <div class="methodology-item">
-                <h3>Educação Nutricional</h3>
-                <p><strong>Habilidade Relacionada:</strong> Ensino e Comunicação</p>
-                <p>A educação nutricional é fundamental para empoderar as pessoas a tomarem decisões alimentares informadas. Utilizo estratégias educativas, incluindo workshops, materiais visuais e acompanhamento contínuo, para ensinar meus clientes sobre a importância de uma alimentação balanceada e como fazer escolhas conscientes no seu dia a dia.</p>
-            </div>
-        
-            <div class="methodology-item">
-                <h3>Monitoramento e Acompanhamento</h3>
-                <p><strong>Habilidade Relacionada:</strong> Gestão de Resultados e Feedback Contínuo</p>
-                <p>O acompanhamento regular é essencial para garantir que as mudanças alimentares sejam implementadas com sucesso. Uso ferramentas de monitoramento, como aplicativos e anotações detalhadas, para observar o progresso e ajustar os planos alimentares conforme necessário. O feedback contínuo é uma parte importante do processo, promovendo motivação e correções para atingir os objetivos estabelecidos.</p>
-            </div>
-        </section>
-        
-    
         <section id="contact" class="contact">
             <h2>Contato</h2>
             <form>
@@ -119,5 +127,4 @@
             </form>
         </section>
     </body>
-    
-    
+</html>
