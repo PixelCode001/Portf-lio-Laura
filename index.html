@@ -1,160 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfólio - Laura Gomes</title>
-        <link rel="stylesheet" href="style.css">
-        <!-- Link para o Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
-    
-    <body>
-        <body> 
-            <!-- Barra de Navegação -->
-            <header>
-                <nav class="navbar">
-                    <div class="navbar-container">
-                        <a href="#" class="logo">MeuPortfólio</a>
-                        <ul class="navbar-links">
-                            <li><a href="#home">Início</a></li>
-                            <li><a href="#about">Sobre</a></li>
-                            <li><a href="#experience">Experiência</a></li>
-                            <li><a href="#methodologies">Metodologias</a></li>
-                            <li><a href="#contact">Contato</a></li>
-                        </ul>
-                        <!-- Ícone de hambúrguer -->
-                        <div class="hamburger" onclick="toggleMenu()">☰</div>
-                    </div>
-                </nav>
-            </header>
-            
-            <!-- Conteúdo da página -->
-            <div class="content">
-                <!-- Seu conteúdo aqui -->
-            </div>
-            
-            <script>
-                // Detecta quando o usuário rola a página
-                window.addEventListener("scroll", function () {
-                    const navbar = document.querySelector(".navbar");
-                    if (window.scrollY > 50) { // Quando rolar mais de 50px
-                        document.body.classList.add("scrolled");
-                    } else {
-                        document.body.classList.remove("scrolled");
-                    }
-                });
-            
-                // Função para abrir/fechar o menu hambúrguer
-                function toggleMenu() {
-                    const menu = document.querySelector(".navbar-links");
-                    const hamburger = document.querySelector(".hamburger");
-                    menu.classList.toggle("active");
-                    hamburger.classList.toggle("active");
-                }
-            </script>
-            
-            </body>
-            
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Laura Gomes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Laura Gomes</h1>
+            <p>Olá, seja bem-vindo(a) ao meu portfólio! Aqui você encontrará algumas das minhas habilidades e um pouco das minhas experiências. Desça para conferir mais detalhes. Espero que goste!</p>
+            <a href="#about" class="button">Sobre mim</a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
 
-        <!-- Seção principal -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Laura Gomes</h1>
-                <p>Portfolio da dona Laura</p>
-                <a href="#about" class="button">Sobre mim</a>
-            </div>
-        </section>
-    
-        <!-- Redes sociais fixas à direita -->
-        <div class="social-media-icons">
-            <a href="https://wa.me/+5531997582330" target="_blank" class="social-icon">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://instagram.com/laura_gomexz" target="_blank" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <!-- Adicionar outros ícones conforme necessário -->
+    <!-- Sobre mim -->
+    <section id="about" class="about">
+        <h2>Sobre mim</h2>
+        <p>Olá, sou Laura, futura nutricionista! Sou uma pessoa comunicativa, paciente e adaptável, com uma grande vontade de aprender e melhorar sempre. Tenho experiência em edição de vídeos, criação de logos e web design, como pode ver no meu portfólio. Também sou apaixonada por saúde alimentar e busco constantemente me atualizar e aprimorar meus conhecimentos de forma autodidata. Fico feliz em compartilhar um pouco do meu trabalho com você e espero que goste!</p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="services" class="services">
+        <h2>Minhas competências e experiências de trabalho incluem:</h2>
+        <div class="service-list">
+            <div class="service-item">Operação de Sistemas de Ponto de Venda (PDV), registrando produtos e processando pagamentos.</div>
+            <div class="service-item">Garantia de precisão em cálculos e na aplicação de promoções e descontos.</div>
+            <div class="service-item">Atendimento rápido e eficiente, proporcionando uma experiência positiva ao cliente.</div>
+            <div class="service-item">Gestão de equipe para otimizar o fluxo de atendimento e reduzir filas.</div>
         </div>
-    
-        <!-- Seções do portfólio e do contato aqui -->
-        <section id="about" class="about">
-            <h2>Sobre mim</h2>
-            <p>Olá! Sou Laura, futura nutricionista...</p>
-        </section>
-        <div class="scroll-down">
-            <a href="#next-section" class="scroll-link">
-                <i class="fa fa-arrow-down"></i> <!-- Usando um ícone da Font Awesome -->
-            </a>
-        </div>
-        <section id="next-section">
-            <!-- Conteúdo da próxima seção -->
-        </section>
-        
-        <!-- Seção "Habilidades" -->
-        <section id="skills" class="skills">
-            <h2>Habilidades</h2>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="skills" class="skills">
+        <h2>Habilidades</h2>
+        <div class="skill-list">
             <div class="skill-item">🖥️ Gestão de Perfis Online</div>
             <div class="skill-item">🍳 Criação e Desenvolvimento de Receitas Culinárias</div>
             <div class="skill-item">🎥 Edição Profissional de Vídeos</div>
             <div class="skill-item">🎨 Design Gráfico e Branding</div>
             <div class="skill-item">🧑‍💻 Aprendizado Rápido e Adaptação</div>
-        </section>
-
-        <!-- Seção de Experiência Profissional -->
- <!-- Seção de Experiência Profissional -->
-<section id="experience" class="experience">
-    <h2>Experiência Profissional</h2>
-    <div class="experience-items">
-        <div class="experience-item">
-            <h3>Serviço ao Cliente e Processamento de Pagamentos</h3>
-            <p><strong>Período:</strong> Outubro de 2021 - Início 2023</p>
-            <ul>
-                <li>Operação de Sistemas de Ponto de Venda (PDV), registrando produtos e processando pagamentos.</li>
-                <li>Garantia de precisão em cálculos e na aplicação de promoções e descontos.</li>
-                <li>Atendimento rápido e eficiente, proporcionando uma experiência positiva ao cliente.</li>
-                <li>Gestão de equipe para otimizar o fluxo de atendimento e reduzir filas.</li>
-            </ul>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Seção de Metodologias -->
-<section id="methodologies" class="methodologies">
-    <h2>Metodologias e Abordagens</h2>
-    <p>Minhas metodologias são fundamentadas em princípios científicos e práticos, aplicados de forma personalizada para cada cliente. Abaixo, apresento as abordagens que utilizo em minha prática como nutricionista.</p>
-    <div class="methodology-items">
-        <div class="methodology-item">
-            <h3>Nutrição Comportamental</h3>
-            <p>A nutrição comportamental integra aspectos psicológicos e emocionais ao processo de alimentação, promovendo uma relação saudável e sustentável com a comida.</p>
-        </div>
-
-        <div class="methodology-item">
-            <h3>Planejamento Alimentar Personalizado</h3>
-            <p>Planos alimentares feitos sob medida, levando em consideração os hábitos, preferências e necessidades nutricionais de cada cliente.</p>
-        </div>
-
-        <div class="methodology-item">
-            <h3>Educação Nutricional</h3>
-            <p>Proporcionar o conhecimento necessário para que meus clientes possam tomar decisões alimentares conscientes e promover um estilo de vida saudável.</p>
-        </div>
-
-        <div class="methodology-item">
-            <h3>Monitoramento e Acompanhamento</h3>
-            <p>O acompanhamento contínuo é essencial para garantir que os objetivos sejam atingidos e os planos alimentares sejam ajustados conforme necessário.</p>
-        </div>
-    </div>
-</section>
-
-        
-        <section id="contact" class="contact">
-            <h2>Contato</h2>
-            <form>
-                <input type="text" placeholder="Nome" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </body>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>© 2024 Laura Gomes - Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>
